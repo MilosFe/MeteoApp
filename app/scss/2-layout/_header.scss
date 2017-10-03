@@ -1,0 +1,142 @@
+.push-menu {
+    width: 15%;
+    position: fixed;
+    min-height: 1000px;
+    color: white;
+    background-color: #2e3138;
+    border-right: 2px solid #212328;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    &.toggle {
+        width: 5%;
+    }
+    .logo_main {
+        display: block;
+        padding: 20px;
+        border-bottom: 1px solid #3a3d44;
+        &.toggle {
+            width: 10%;
+        }
+    }
+    li {
+        border-bottom: 1px solid #3a3d44;
+        padding: 15px;
+        a {
+            padding: 5px;
+            text-decoration: none;
+            display: block;
+            color: white;
+        }
+    }
+}
+
+.header-top {
+    width: 85%;
+    background: #2e3138;
+    position: fixed;
+    right: 0;
+    top: 0;
+    color: white;
+    border-bottom: 4px solid #aa4ca3;
+    &.toggle {
+        width: 95%;
+    }
+    .wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header-menu {
+        margin-left: 2em;
+        cursor: pointer;
+    }
+    .navigation-list {
+        display: flex;
+        li {
+            &:last-of-type {
+                background: #aa4ca3;
+            }
+        }
+        a {
+            margin-right: 10px;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+        }
+        .fa.fa-power-off {
+            color: white;
+            border: 2px solid white;
+            font-size: 1.5em;
+            border-radius: 50%;
+            padding: 7px;
+        }
+        .fa.fa-columns {
+            color: white;
+            font-size: 1.5em;
+            padding: 7px;
+        }
+    }
+}
+
+.search-aside {
+    display: none;
+    position: fixed;
+    top: 61px;
+    right: 0;
+    z-index: 2;
+    width: 250px;
+    background: #f9f9f9;
+    min-height: 1000px;
+    box-shadow: -2px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    padding: 15px;
+    text-align: center;
+    .searchbox {
+        position: relative;
+        height: 30px;
+        width: 200px;
+        margin: 40px auto;
+        overflow: hidden;
+        border: 1px solid grey;
+        background: none;
+        color: rgba(0, 0, 0, 0);
+        input {
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            padding-left: 2px;
+            padding-right: 15px;
+            border: none;
+            font-size: 0.8rem;
+            color: grey;
+            background: none;
+        }
+        button {
+            position: absolute;
+            z-index: 1;
+            right: 0px;
+            top: 0px;
+            height: 100%;
+            width: 50px;
+            background: none;
+            font-size: 1.3em;
+            color: grey;
+            border: none;
+        }
+    }
+}
+
+.admin-section {
+    position: relative;
+    margin-left: 10px;
+    top: 100px;
+    left: 15%;
+    background: #f9f9f9;
+    color: grey;
+    width: 35%;
+    padding: 1.3em;
+    &.toggle {
+        left: 5%;
+    }
+}

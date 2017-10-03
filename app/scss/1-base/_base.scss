@@ -1,0 +1,27 @@
+@import '_mixins.scss';
+img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.fa-circle {
+    margin-right: 1em;
+    font-size: 20px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font: Arial, 16px, serif;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}

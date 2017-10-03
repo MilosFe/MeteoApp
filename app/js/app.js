@@ -1,6 +1,7 @@
-var app = (function(global, toastr) {
+var app = function(lat, lon) {
     var request = new XMLHttpRequest();
-    request.open('GET', '/meteo', true);
+    var url = '/meteo/?lat=' + lat + '&lon=' + lon;
+    request.open('GET', url, true);
 
     request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
@@ -17,5 +18,5 @@ var app = (function(global, toastr) {
         // There was a connection error of some sort
     };
 
-    request.send();
-})(window, toastr);
+    return request;
+}

@@ -30,7 +30,9 @@ app.get('/', function(request, response) {
     response.render('index');
 });
 app.get('/meteo', function(request, response) {
-    http.get('http://api.met.no/weatherapi/locationforecast/1.9/?lat=11.43;lon=12.12', function(res) {
+
+    console.log("Here");
+    http.get('http://api.met.no/weatherapi/locationforecast/1.9/?lat=' + request.query.lat + ';lon=' + request.query.lon, function(res) {
         var str = '';
         console.log('Response is ' + res.statusCode);
 
@@ -44,7 +46,6 @@ app.get('/meteo', function(request, response) {
         });
 
     });
-
 });
 
 

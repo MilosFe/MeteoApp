@@ -1,22 +1,27 @@
-var app = function(lat, lon) {
-    var request = new XMLHttpRequest();
-    var url = '/meteo/?lat=' + lat + '&lon=' + lon;
-    request.open('GET', url, true);
+var http = function(opts) {
+    console.log('Opts');
+    return new Promise(function(resolve, reject) {
+        var request = new XMLHttpRequest();
+        request.open(opts.method, opts.url);
+        request.onload = function() {
+            if (this.status >= 200 && this.status < 300) {
+                console.log('Resolve');
+                resolve(request.response);
+            } else {
+                reject({
+                    status: this.status,
+                    statusText: request.statusText
+                })
+            }
+        };
+        request.onerror = function() {
+            reject({
+                status: this.status,
+                statusText: request.statusText
+            });
+        };
+        request.send();
+    })
 
-    request.onload = function() {
-        if (request.status >= 200 && request.status < 400) {
-            // Success!
-            var data = request.responseText;
-            console.log(data);
-        } else {
-            // We reached our target server, but it returned an error
 
-        }
-    };
-
-    request.onerror = function() {
-        // There was a connection error of some sort
-    };
-
-    return request;
 }

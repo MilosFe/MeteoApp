@@ -1,7 +1,7 @@
-(function(global, toastr, $, application) {
+(function(global, toastr, $, request) {
     'use strict';
-    var lat = document.getElementById("lat");
-    var lon = document.getElementById("lon");
+    var lat = document.getElementById("location");
+    var lon = document.getElementById("destination");
     var submitBtn = document.getElementById("submit");
 
 
@@ -18,9 +18,16 @@
     toastr.info('Admin Panel');
 
     submitBtn.addEventListener('click', function() {
-        console.log('here');
-        var open = new app(lat.value, lon.value);
-        open.send();
+        console.log('Here')
+        var url = '/meteo/?lat=' + lat.value + '&lon=' + lon.value;
+        var city = request({
+            method: 'GET',
+            url: url
+        });
+        city.then(function(data) {
+            console.log(data);
+        })
+
     })
 
-})(window, toastr, jQuery, app);
+})(window, toastr, jQuery, http);

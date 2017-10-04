@@ -18,16 +18,24 @@
     toastr.info('Admin Panel');
 
     submitBtn.addEventListener('click', function() {
-        console.log('Here')
+
         var url = '/meteo/?lat=' + lat.value + '&lon=' + lon.value;
-        var city = request({
+        var first = request({
             method: 'GET',
             url: url
         });
-        city.then(function(data) {
-            console.log(data);
-        })
+        var second = request({
+            method: 'GET',
+            url: url
+        });
 
-    })
+        Promise.all([first, second]).then(function(data1, data2) {
+            console.log(data1);
+            console.log('\n\n\n\n\n');
+            console.log(data2);
+        });
+
+
+    });
 
 })(window, toastr, jQuery, http);

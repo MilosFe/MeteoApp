@@ -1,11 +1,10 @@
 var http = function(opts) {
-    console.log('Opts');
+    'use strict';
     return new Promise(function(resolve, reject) {
         var request = new XMLHttpRequest();
         request.open(opts.method, opts.url);
         request.onload = function() {
             if (this.status >= 200 && this.status < 300) {
-                console.log('Resolve');
                 resolve(request.response);
             } else {
                 reject({
@@ -22,6 +21,4 @@ var http = function(opts) {
         };
         request.send();
     })
-
-
 }

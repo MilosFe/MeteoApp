@@ -57,9 +57,20 @@
 
     <!--build:js js/main.min.js -->
     <script src="/js/vendor/jquery.min.js"></script>
+
     <script src="js/vendor/toastr.min.js"></script>
+    <script>
+        function initMap() {
+            console.log('Map Loaded');
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASEIaElDzRL7_yrB1zWdGVjVytzwFNSlw&callback=initMap">
+    </script>
     <script src="js/app.js"></script>
+    <script src="js/cordinates.js"></script>
     <script src="js/main.js"></script>
+
+    AIzaSyDaQ5AGz7Kn_C1-hwJg3VPvdVWOZ0esQ68
 
 
     <!-- endbuild -->

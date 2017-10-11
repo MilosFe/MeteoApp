@@ -29,10 +29,12 @@
             location: '#location',
             destination: "#destination"
         })
-        var x = get.validateFields();
 
+        var x = get.validateFields();
+        console.log(x);
 
         setTimeout(function() {
+
             var url1 = '/meteo/?lat=' + x['0'].lat + '&lon=' + x['1'].lon;
             var url2 = '/meteo/?lat=' + x['0'].lat + '&lon=' + x['1'].lon;
             console.log(url1);
@@ -53,7 +55,7 @@
                 console.log('\n\n\n\n\n');
                 console.log(data2);
             });
-        }, 100);
+        }, 1000);
 
 
 
